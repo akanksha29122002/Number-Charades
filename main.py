@@ -15,16 +15,18 @@ while choice == 1:
         chances = 15//level
         limit= 10**level
     else:
-        print("Please enter correct level")
+        print("Please Enter Correct Level")
         exit()
     print("You have {} chances to guess the number in the range [1, {}]".format(chances,limit))
     comp = random.randint(1, limit)
     while chances > 0:
         guess = int(input("Enter your guess: "));
         if guess == comp:
+            #The case when Human wins
             print("You Won");
             break;
         elif guess > comp:
+            #the case when computer wins
             if guess - comp < limit//5:
                 print("You Guess SLigltyy High Number");
             else:
